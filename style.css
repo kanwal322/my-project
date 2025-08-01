@@ -1,0 +1,302 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background: #c8d0db;
+  color: #5b5c57;
+  line-height: 1.6;
+}
+
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+
+.cover-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #e6e9ef;
+}
+
+.cover-image {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  display: block;
+  border-radius: 10px;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.lightbox.show {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.lightbox p {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 36px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.lightbox .close:hover {
+  transform: scale(1.3);
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  transform: translateY(-50%);
+}
+
+.lightbox-nav span {
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s;
+}
+
+.lightbox-nav span:hover {
+  transform: scale(1.2);
+}
+
+
+.contact-section {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.contact-details {
+  margin-bottom: 30px;
+  background: #e6e9ef;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.contact-details p {
+  margin: 10px 0;
+}
+
+
+form label {
+  display: block;
+  margin: 15px 0 5px;
+  font-weight: 600;
+  color: #444;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  font-size: 1rem;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+button[type="submit"] {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #555;
+}
+
+
+.feedback-area {
+  margin-top: 40px;
+  padding: 20px;
+  background: #f4f7fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.feedback-area h3 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.feedback-area ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.feedback-area li {
+  background: #e1e9f0;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    margin: 5px 0;
+    font-size: 0.9rem;
+  }
+
+  .cover-image {
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  .gallery-item img {
+    height: 200px;
+  }
+
+  .lightbox img {
+    max-width: 95%;
+    max-height: 70vh;
+  }
+
+  .lightbox .close {
+    font-size: 30px;
+    top: 10px;
+    right: 15px;
+  }
+
+  .lightbox-nav span {
+    font-size: 30px;
+  }
+
+  .contact-section {
+    margin: 20px;
+    padding: 20px;
+  }
+}
